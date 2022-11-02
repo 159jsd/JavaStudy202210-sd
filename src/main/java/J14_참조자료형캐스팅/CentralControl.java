@@ -6,23 +6,53 @@ public class CentralControl {
     private Power device2; //Main.java 에서 CentralControl생성자에 computer가 들어가 있어서
     private Power device3; //컴퓨터의 전원을 켠다고 나온다.
 
-    public CentralControl(Power device1, Power device2, Power device3) {
+    private Power deviceArray[];
+
+    public CentralControl(Power[] deviceArray) {
         this.device1 = device1;
         this.device2 = device2;
         this.device3 = device3;
     }
 
+    public void addDevice(Power device) {
+        int emptyIndex = checkEmpty();
+        if (emptyIndex == -1) {
+            System.out.println("더 이상 장치를 연결할 수 없습니다.");
+            System.out.println();
+            return;
+        }
+        deviceArray[emptyIndex] = device;
+        System.out.println(device.getClass().getSimpleName() + " 장치가 연결되었습니다.");
+        System.out.println();
+      }
+
+    private int checkEmpty() {
+         for (int i = 0; i < deviceArray.length; i++) {
+               if (deviceArray[i] == null) {
+                   return i;
+               }
+         }
+         return -1;
+    }
+
     public void powerOn() {
-        device1.on();
-        device2.on();
-        device3.on();
+        for (int i = 0; i < deviceArray.length; i++) {
+            if (deviceArray[i] == null) continue;
+
+            deviceArray[i].on();
+        }
     }
 
     public void powerOff() {
-        device1.off();
-        device2.off();
-        device3.off();
+        for (int i = 0; i < deviceArray.length; i++) {
+            if (deviceArray[i] == null) continue;
+
+            deviceArray[i].off();
+        }
     }
+
+
+
 
 
 

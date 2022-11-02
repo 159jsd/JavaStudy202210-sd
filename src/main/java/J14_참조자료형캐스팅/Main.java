@@ -9,12 +9,16 @@ public class Main {
         LED led = new LED();
         Speaker speaker = new Speaker();
 
-        CentralControl centralControl = new CentralControl(led, speaker, computer3);
+        CentralControl centralControl = new CentralControl(new Power[5]);
         //위 경우는 묵시적 형변환.
 
-        centralControl.powerOn();
-        System.out.println("-------------------");
-        centralControl.powerOff();
+        centralControl.addDevice(computer1);
+        centralControl.addDevice(led);
+        centralControl.addDevice(speaker);
+
+//        centralControl.powerOn();
+//        System.out.println("-------------------");
+//        centralControl.powerOff();
 
 
 
