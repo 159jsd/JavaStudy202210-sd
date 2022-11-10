@@ -1,7 +1,6 @@
 package J19_컬렉션;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class StudentSet {
     public static void main(String[] args) {
@@ -23,7 +22,50 @@ public class StudentSet {
             set -> list 변환
             해당 list를 학번 순서에 맞게 정렬하시오.
          */
+        String searchName = "김혜진";
+        for (Student student : students) {
+            if (student.getName().equals(searchName)){
+                System.out.println(searchName + " 학생의 학번 : " + student.getId());
+                break;
+            }
+        }
 
+        int searchID = 20220004;
+        int deleteID = 20220001;
+
+        for (Student student : students) {
+            if (student.getId() == searchID) {
+                student.setName("설민수");
+                break;
+            }
+        }
+
+        for (Student student : students) {
+            if (student.getId() == deleteID) {
+                students.remove(student);
+                break;
+            }
+        }
+
+        for (Student student : students) {
+            System.out.println(student);
+        }
+
+        List<Student> studentList = new ArrayList<Student>();
+        studentList.addAll(students);
+
+        int cmpId = 2022000;
+        int j = 0;
+
+        List<Student> sortedStudents = new ArrayList<Student>();
+        for(int i = 0; i < students.size(); i++) {
+            cmpId++;
+            for (Student student : studentList) {
+                if (student.getId() == cmpId) {
+                    sortedStudents.add(student);
+                }
+            }
+        }
 
 
 
