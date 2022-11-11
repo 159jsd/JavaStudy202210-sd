@@ -1,7 +1,6 @@
-package J17_스태틱.싱글톤;
+package j17_스태틱.싱글톤;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.ToString;
 
 @AllArgsConstructor

@@ -1,4 +1,4 @@
-package J17_스태틱;
+package j17_스태틱;
 
 import j08_메소드.Method1;
 import lombok.Getter;

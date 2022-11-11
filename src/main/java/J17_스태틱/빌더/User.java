@@ -1,4 +1,4 @@
-package J17_스태틱.빌더;
+package j17_스태틱.빌더;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
