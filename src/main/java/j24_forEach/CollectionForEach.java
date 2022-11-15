@@ -51,21 +51,6 @@ public class CollectionForEach {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
 }
